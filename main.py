@@ -8,11 +8,11 @@ response = httpx.get(url)
 
 res = response.json()
 
-os.mkdir('files')
+# os.mkdir('files')
 
 os.chdir('files')
 for user in res:
-    with open(f'{user["username"]}.json', 'w') as fs:
+    with open(f'{user["username"]}.csv', 'w') as fs:
         fs.write(f"Id: {user['id']}\n")
         fs.write(f"username: {user['username']}\n")
         fs.write(f"Email: {user['email']}\n")
